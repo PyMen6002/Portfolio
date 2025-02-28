@@ -7,8 +7,8 @@
 
 /* Estilos globales */
 body {
-    background: linear-gradient(to right, #f06, #ff9a8b); /* Fondo degradado de rosa a naranja */
-    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f06, #ff9a8b); /* Fondo degradado suave */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Tipografía más moderna */
     margin: 0;
     padding: 0;
     color: #333;
@@ -29,7 +29,7 @@ body {
 
 /* Encabezado con fondo degradado verde */
 header {
-    background: linear-gradient(135deg, #4CAF50, #388E3C); /* Fondo degradado verde */
+    background: linear-gradient(135deg, #4CAF50, #388E3C); /* Fondo degradado */
     text-align: center;
     padding: 80px 20px;
     border-bottom: 5px solid #388E3C;
@@ -41,9 +41,6 @@ header h1, header p {
 
 h1 {
     color: #fff;
-}
-
-header h1 {
     font-size: 3.5em;
     margin-bottom: 10px;
 }
@@ -51,6 +48,7 @@ header h1 {
 header p {
     font-size: 1.4em;
     margin-bottom: 20px;
+    color: #fff;
 }
 
 header .cta {
@@ -83,29 +81,28 @@ header .cta:hover {
     }
 }
 
-/* Secciones con fondo degradado rosa */
+/* Secciones con fondo transparente */
 .section {
     padding: 50px 0;
     animation: fadeIn 2s ease-out forwards;
-    margin: 0 15px; /* Margen lateral agregado a todas las secciones */
+    margin: 0 15px;
 }
 
-#about, #projects {
-    background: transparent; /* Dejamos el fondo como transparente para que tome el fondo del body */
-}
-
+/* Títulos de las secciones */
 h2 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 2.5em;
-    color: #000000;
+    color: #333;
+    font-weight: bold;
     animation: fadeIn 1s ease-out forwards;
 }
 
+/* Párrafos de las secciones */
 p {
     text-align: center;
     font-size: 1.2em;
-    color: #000000;
+    color: #555;
     line-height: 1.8;
     margin-top: 20px;
     animation: fadeIn 1.5s ease-out forwards;
@@ -113,60 +110,53 @@ p {
 
 /* Cajas alrededor del texto */
 section > div {
-    background-color: rgba(255, 255, 255, 1); /* Fondo blanco translúcido */
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco translúcido */
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     animation: fadeIn 2s ease-out forwards;
-    margin-left: 15px; /* Margen lateral izquierdo */
-    margin-right: 15px; /* Margen lateral derecho */
 }
 
 /* Estilo de la grilla de proyectos */
 .project-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centra los elementos en el eje horizontal */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 40px;
-    padding: 0 20px; /* Padding lateral agregado a la grilla de proyectos */
+    padding: 0 20px;
 }
 
 /* Estilo para cada tarjeta de proyecto */
 .project-card {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Aumentamos la sombra */
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Asegura que los botones estén alineados en la parte inferior */
-    flex-basis: calc(33.33% - 30px); /* Hace que todos los proyectos ocupen el mismo 33.33% del ancho del contenedor */
-    max-width: calc(33.33% - 30px); /* Evita que el proyecto se extienda más de lo deseado */
-    height: 300px; /* Define una altura constante para que todos los elementos estén alineados */
+    justify-content: space-between;
+    height: 300px;
     animation: fadeIn 2s ease-out forwards;
-    margin-left: 15px; /* Margen lateral izquierdo */
-    margin-right: 15px; /* Margen lateral derecho */
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); /* Sombra más fuerte al hacer hover */
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
-
 
 .project-card h3 {
     font-size: 1.8em;
     margin-bottom: 10px;
     color: #333;
+    font-weight: bold;
 }
 
 .project-card p {
     font-size: 1.1em;
     color: #555;
-    flex-grow: 1; /* Asegura que el contenido crezca y empuje el botón hacia abajo */
+    flex-grow: 1;
 }
 
 .project-card .btn {
@@ -174,11 +164,10 @@ section > div {
     margin-top: 15px;
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     text-decoration: none;
     border-radius: 30px;
     transition: background-color 0.3s, transform 0.3s;
-    margin-bottom: 20px; /* Añade margen en la parte inferior para asegurar que los botones no se toquen */
 }
 
 .project-card .btn:hover {
@@ -188,7 +177,7 @@ section > div {
 
 /* Pie de página */
 footer {
-    background-color: #838383;
+    background-color: #333;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -204,8 +193,37 @@ footer p {
 a {
     color: inherit;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 a:hover {
+    color: #4CAF50;
     text-decoration: underline;
+}
+
+/* Mejoras de responsividad */
+@media (max-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1.2em;
+    }
+
+    .project-card {
+        height: 350px;
+    }
+
+    .project-card h3 {
+        font-size: 1.6em;
+    }
+
+    .project-card p {
+        font-size: 1.1em;
+    }
 }
